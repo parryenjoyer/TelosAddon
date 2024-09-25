@@ -16,6 +16,8 @@ import xyz.telosaddon.yuno.sound.SoundManager;
 import xyz.telosaddon.yuno.ui.TelosMenu;
 import xyz.telosaddon.yuno.utils.Config;
 import xyz.telosaddon.yuno.sound.CustomSound;
+import xyz.telosaddon.yuno.features.AutoNexusFeature;
+import xyz.telosaddon.yuno.utils.NbtUtils;
 
 import java.util.*;
 
@@ -56,6 +58,9 @@ public class TelosAddon implements ClientModInitializer {
         if(menuKey.wasPressed()) {
             mc.setScreen(new TelosMenu());
         }
+
+         if(nexusKey.wasPressed())
+            AutoNexusFeature.autoNexus();
 
         this.showMainRangeFeature.tick();
         this.showOffHandFeature.tick();
